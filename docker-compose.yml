@@ -9,4 +9,6 @@ services:
       AWS__SecretKey: ${AWS_SECRET_KEY}
       AWS__Region: ${AWS_REGION}
       AWS__InstanceID: ${AWS_INSTANCE_ID}
+    ports:
+      - "8080:8080"
     restart: always
