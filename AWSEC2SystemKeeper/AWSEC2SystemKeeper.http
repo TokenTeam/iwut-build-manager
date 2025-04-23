@@ -1,0 +1,6 @@
+@AWSEC2SystemKeeper_HostAddress = http://localhost:5255
+
+GET {{AWSEC2SystemKeeper_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

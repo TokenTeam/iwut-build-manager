@@ -1,0 +1,16 @@
+services:
+  awsec2systemkeeper:
+    image: ${DOCKER_REGISTRY-}awsec2systemkeeper
+    build:
+      context: .
+      dockerfile: AWSEC2SystemKeeper/Dockerfile
+      args:
+        AWS_ACCESS_KEY: ${AWS_ACCESS_KEY}
+        AWS_SECRET_KEY: ${AWS_SECRET_KEY}
+        AWS_REGION: ${AWS_REGION}
+        AWS_INSTANCE_ID: ${AWS_INSTANCE_ID}
+    environment:
+      - AWS_ACCESS_KEY=${AWS_ACCESS_KEY}
+      - AWS_SECRET_KEY=${AWS_SECRET_KEY}
+      - AWS_REGION=${AWS_REGION}
+      - AWS_INSTANCE_ID=${AWS_INSTANCE_ID}
