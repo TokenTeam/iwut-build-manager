@@ -28,16 +28,4 @@ FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
 
-# 定义构建时的 ARG
-ARG AWS_ACCESS_KEY
-ARG AWS_SECRET_KEY
-ARG AWS_REGION
-ARG AWS_INSTANCE_ID
-
-# 将 ARG 写入环境变量
-ENV AWS__AccessKey=$AWS_ACCESS_KEY
-ENV AWS__SecretKey=$AWS_SECRET_KEY
-ENV AWS__Region=$AWS_REGION
-ENV AWS__InstanceID=$AWS_INSTANCE_ID
-
 ENTRYPOINT ["dotnet", "AWSEC2SystemKeeper.dll"]

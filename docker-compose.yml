@@ -4,14 +4,9 @@ services:
     build:
       context: .
       dockerfile: AWSEC2SystemKeeper/Dockerfile
-      args:
-        AWS_ACCESS_KEY: ${AWS_ACCESS_KEY}
-        AWS_SECRET_KEY: ${AWS_SECRET_KEY}
-        AWS_REGION: ${AWS_REGION}
-        AWS_INSTANCE_ID: ${AWS_INSTANCE_ID}
     environment:
-      - AWS_ACCESS_KEY=${AWS_ACCESS_KEY}
-      - AWS_SECRET_KEY=${AWS_SECRET_KEY}
-      - AWS_REGION=${AWS_REGION}
-      - AWS_INSTANCE_ID=${AWS_INSTANCE_ID}
+      AWS__AccessKey: ${AWS_ACCESS_KEY}
+      AWS__SecretKey: ${AWS_SECRET_KEY}
+      AWS__Region: ${AWS_REGION}
+      AWS__InstanceID: ${AWS_INSTANCE_ID}
     restart: always
