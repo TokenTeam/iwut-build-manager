@@ -11,8 +11,8 @@ jobs:
         uses: actions/checkout@v4
       - name: docker compose up
         run: |
-             docker compose up -d -e AWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY_ID }} \
-                        -e AWS_SECRET_KEY=${{ secrets.AWS_ACCESS_SECRET_ID }} \
-                        -e AWS_REGION=${{ secrets.AWS_REGION }} \
-                        -e AWS_INSTANCE_ID=${{ secrets.AWS_INSTANCE_ID }}
-  
+           AWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY_ID }} \
+           AWS_SECRET_KEY=${{ secrets.AWS_ACCESS_SECRET_ID }} \
+           AWS_REGION=${{ secrets.AWS_REGION }} \
+           AWS_INSTANCE_ID=${{ secrets.AWS_INSTANCE_ID }} \
+           docker compose up -d
