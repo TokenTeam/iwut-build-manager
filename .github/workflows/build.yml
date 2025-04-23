@@ -15,4 +15,4 @@ jobs:
            AWS_SECRET_KEY=${{ secrets.AWS_ACCESS_SECRET_ID }} \
            AWS_REGION=${{ secrets.AWS_REGION }} \
            AWS_INSTANCE_ID=${{ secrets.AWS_INSTANCE_ID }} \
-           sudo docker compose up -d
+           sudo -E docker compose up -d
